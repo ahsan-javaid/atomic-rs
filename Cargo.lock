@@ -3,5 +3,9 @@
 version = 3
 
 [[package]]
-name = "atomic-rs"
+name = "atomics"
+version = "0.1.0"
+
+[[package]]
+name = "concurrency"
 version = "0.1.0"
