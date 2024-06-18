@@ -21,9 +21,20 @@ fn main() {
     println!("average: {avg}");
 
     // scoped threads
-    
+    let mut numbers_one = vec![1, 2, 3];
 
+    thread::scope(|s| {
+        s.spawn(|| {
+            numbers_one.push(1);
+            println!("length: {}", numbers_one.len());
+        });
 
+        s.spawn(|| {
+            for n in &numbers_one {
+                println!("{n}");
+            }
+        });
+    });
 }
 
 
